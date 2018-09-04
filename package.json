@@ -1,0 +1,63 @@
+{
+  "name": "jtemplate",
+  "version": "1.0.0",
+  "description": "jtemplate web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch",
+    "start": "webpack serve",
+    "build": "webpack --mode production",
+    "deploy": "npm install && webpack -p --mode production && node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProjectSunday/koalatapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ProjectSunday/koalatapp/issues"
+  },
+  "homepage": "https://github.com/ProjectSunday/koalatapp#readme",
+  "dependencies": {
+    "@material-ui/core": "^1.5.1",
+    "@material-ui/icons": "^2.0.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "classnames": "^2.2.6",
+    "css-loader": "^0.28.11",
+    "express": "^4.16.3",
+    "file-loader": "^1.1.11",
+    "graphql-tag": "^2.9.2",
+    "html-webpack-plugin": "^3.2.0",
+    "lodash.clonedeep": "^4.5.0",
+    "node-sass": "^4.9.3",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "copy-webpack-plugin": "^4.5.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "jest": "^23.5.0",
+    "json-loader": "^0.5.7",
+    "raw-loader": "^0.5.1",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^2.1.5",
+    "webpack-dev-server": "^3.1.6"
+  }
+}
