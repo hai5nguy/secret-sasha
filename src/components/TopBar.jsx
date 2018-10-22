@@ -94,10 +94,7 @@ class TopBar extends React.Component {
                                 </List>
                             </div>
                         </SwipeableDrawer>
-
-                        <Typography variant="title" color="inherit" className={classes.headerText}>
-                            jTemplate hi marcus
-                        </Typography>
+                        <Typography variant="title" color="inherit" className={classes.headerText}>Secret Sasha</Typography>
 
                         <AboutModal open={aboutOpen} onClose={this.showAbout(false)} />
 

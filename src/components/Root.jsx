@@ -6,6 +6,7 @@ import { withStyles, Button } from '@material-ui/core'
 
 import { Main, TopBar, ManageFields } from 'components'
 import { loadAppData } from 'actions'
+import NameCard from './NameCard';
 
 const styles = {
     root: {
@@ -23,13 +24,16 @@ class Root extends React.Component {
         return (
             <div className={classes.root}>
                 <TopBar />
-                <Button>Mom</Button>
-                <Button>Dad</Button>
-                <Button>Shannon</Button>
-                <Button>Hai</Button>
-                <Button>Diem</Button>
+                <NameCard />
+                <NameCard />
+                <NameCard />
+                <NameCard />
+                <NameCard />
+                <NameCard />
+                <NameCard />
+                <NameCard />
+                <NameCard />
             </div>
-
         )
     }
 }
