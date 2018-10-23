@@ -31,6 +31,9 @@ const styles = {
         marginLeft: -12,
         marginRight: 20,
     },
+    sasha_icon: {
+        width: '3rem',
+    },
 };
 
 class TopBar extends React.Component {
@@ -50,19 +53,19 @@ class TopBar extends React.Component {
     }
 
     render() {
-        const { classes } = this.props
+        const { classes: c } = this.props
         const { aboutOpen } = this.state
         return (
-            <div className={classes.root}>
+            <div className={c.root}>
                 <AppBar position="static">
                     <Toolbar>
                         <IconButton
-                            className={classes.menuButton}
+                            className={c.menuButton}
                             color="inherit"
                             aria-label="Menu"
                             onClick={this.toggleDrawer(true)}
                         >
-                            <MenuIcon />
+                            <img className={c.sasha_icon} src="sasha_icon.png" />
                         </IconButton>
 
                         <SwipeableDrawer
@@ -86,7 +89,7 @@ class TopBar extends React.Component {
                                 </List>
                             </div>
                         </SwipeableDrawer>
-                        <Typography variant="h6" color="inherit" className={classes.headerText}>Secret Sasha</Typography>
+                        <Typography variant="h6" color="inherit" className={c.headerText}>Secret Sasha</Typography>
 
                         <AboutModal open={aboutOpen} onClose={this.showAbout(false)} />
 

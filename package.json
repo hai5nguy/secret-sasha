@@ -1,8 +1,8 @@
 {
-  "name": "jtemplate",
+  "name": "Secret Sasha",
   "version": "1.0.0",
-  "description": "jtemplate web app",
-  "main": "index.js",
+  "description": "Nagooyen's secret santa app",
+  "main": "server.js",
   "scripts": {
     "test": "jest --watch",
     "start": "webpack-dev-server",
