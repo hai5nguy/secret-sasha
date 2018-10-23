@@ -1,5 +1,5 @@
 {
-  "name": "Secret Sasha",
+  "name": "secret-sasha",
   "version": "1.0.0",
   "description": "Nagooyen's secret santa app",
   "main": "server.js",

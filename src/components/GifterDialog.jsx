@@ -45,6 +45,7 @@ const styles = {
     },
     button: {
         width: '48%',
+        minHeight: 70,
     },
 };
 
