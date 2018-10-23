@@ -27,10 +27,10 @@ class AboutModel extends React.Component {
 
         return (
             <Dialog onClose={this.handleClose} aria-labelledby="simple-dialog-title" {...other}>
-                <DialogTitle id="simple-dialog-title">jTemplate</DialogTitle>
+                <DialogTitle id="simple-dialog-title">Secret Sasha</DialogTitle>
                 <div className={classNames(classes.dialogBody)}>
                     <Typography component="p">
-                        Made for Joshua by Hai Nagooyen
+                        Made by Hai Nagooyen
                         <br />
                         <br />
                         @Copyright 2018

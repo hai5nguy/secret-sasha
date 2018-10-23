@@ -79,12 +79,6 @@ class TopBar extends React.Component {
                                 onKeyDown={this.toggleDrawer(false)}
                             >
                                 <List component="nav">
-                                    <ListItem button onClick={setActiveView('MANAGE_FIELDS')}>
-                                        <ListItemIcon>
-                                            <TOCIcon />
-                                        </ListItemIcon>
-                                        <ListItemText primary="Manage Fields" />
-                                    </ListItem>
                                     <ListItem button onClick={this.showAbout(true)}>
                                         <ListItemIcon>
                                             <HelpIcon />
