@@ -1,9 +1,7 @@
 import React from 'react'
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles, Button, Typography } from '@material-ui/core'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
@@ -13,7 +11,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import TOCIcon from '@material-ui/icons/Toc'
 import HelpIcon from '@material-ui/icons/Help'
-import { AboutModal } from 'components'
+import AboutModal from './AboutModal'
 
 import { setActiveView } from 'actions'
 
@@ -88,7 +86,7 @@ class TopBar extends React.Component {
                                 </List>
                             </div>
                         </SwipeableDrawer>
-                        <Typography variant="title" color="inherit" className={classes.headerText}>Secret Sasha</Typography>
+                        <Typography variant="h6" color="inherit" className={classes.headerText}>Secret Sasha</Typography>
 
                         <AboutModal open={aboutOpen} onClose={this.showAbout(false)} />
 

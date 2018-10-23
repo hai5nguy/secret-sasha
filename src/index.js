@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import { createMuiTheme, MuiThemeProvider, CssBaseline } from '@material-ui/core'
 import { green, red } from '@material-ui/core/colors'
 
-import { Root } from 'components'
+import Root from 'components/Root'
 
 import store from 'store'
 

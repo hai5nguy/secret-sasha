@@ -4,8 +4,11 @@ import { connect } from 'react-redux'
 // import classNames from 'classnames'
 import { withStyles, Button, Typography } from '@material-ui/core'
 
-import { Main, TopBar, ManageFields } from 'components'
+// import { Main, TopBar, ManageFields } from 'components'
 import { loadAppData } from 'actions'
+
+import NameButton from './NameButton'
+import TopBar from './TopBar'
 
 const styles = {
     root: {
@@ -20,15 +23,7 @@ const styles = {
         justifyContent: 'center',
         marginTop: 5,
     },
-    nameButton: {
-        width: '100%',
-        maxWidth: 165,
-        margin: 5,
-        height: 100,
-    },
-    name: {
-        color: 'white',
-    },
+
 };
 
 const names = ['Mom', 'Dad', 'Shannon', 'Hai', 'Diem', 'Adam', 'Kieu', 'Paul', 'Thu', 'Derik', 'Michael']
@@ -45,13 +40,7 @@ class Root extends React.Component {
             <div className={c.root}>
                 <TopBar />
                 <div className={c.buttonContainer}>
-                    {
-                        names.map((n, i) => (
-                            <Button className={c.nameButton} variant="contained" color="secondary" key={i}>
-                                <Typography className={c.name} variant="h5">{n}</Typography>
-                            </Button>
-                        ))
-                    }
+                    { names.map((n, i) => (<NameButton key={i} name={n} nameClick={() => {}} />)) }
                 </div>
             </div>
 
