@@ -19,6 +19,9 @@ const theme = createMuiTheme({
             main: green[900],
         },
     },
+    typography: {
+        useNextVariants: true,
+    },
 })
 
 /* globals */
