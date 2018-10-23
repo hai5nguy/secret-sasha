@@ -11,7 +11,7 @@ const styles = {
         width: '100%',
         maxWidth: 165,
         margin: 5,
-        height: 100,
+        height: 84,
     },
     name: {
         color: 'white',

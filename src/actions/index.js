@@ -11,5 +11,6 @@ import setTemplate from './template/set-template'
 
 import setActiveView from './ui/set-active-view'
 
+import openCard from './open-card'
 
-export { addNewField, loadAppData, removeField, saveAppData, setActiveView, setFields, setFieldName, setFieldValue, setTemplate }
+export { openCard, addNewField, loadAppData, removeField, saveAppData, setActiveView, setFields, setFieldName, setFieldValue, setTemplate }

@@ -1,13 +1,11 @@
 // import cloneDeep from 'lodash.clonedeep';
 
 const initialState = [
-    { name: 'cool-dude', value: 'Joshua' },
-    { name: 'Author', value: 'Hai Nagooyen' },
-    { name: 'versionNumber', value: '1.0' },
+
 ];
 export default (state = initialState, action) => {
     switch (action.type) {
-        case 'FIELDS_SET': {
+        case 'CARD_OPEN': {
             return [...action.fields]
         }
         case 'FIELDS_SET_NAME': {

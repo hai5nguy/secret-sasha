@@ -1,11 +1,11 @@
 import { combineReducers, createStore } from 'redux'
 
-import fields from './fields-reducer'
+import card from './card-reducer'
 import template from './template-reducer'
 import ui from './ui-reducer'
 
 const reducer = combineReducers({
-    fields,
+    card,
     template,
     ui,
 })
