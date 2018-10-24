@@ -1,10 +1,11 @@
 const express = require('express')
 const graphqlHTTP = require('express-graphql')
 
+require('./create-gifters')
+
 const app = express()
 
 const PORT = process.env.PORT || 5000
-
 
 const schema = require('./schema.js')
 const root = require('./root-resolver.js')

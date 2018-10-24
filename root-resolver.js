@@ -7,6 +7,9 @@
 
 module.exports = {
     hello: () => 'Hello world!',
+    gifters: () => {
+
+    },
     // authenticate,
     // getGoogleAuthUrl,
     // leaderboard: async () => {
