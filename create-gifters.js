@@ -5,7 +5,7 @@ fs.stat('./gifters.json', (err, stats) => {
     if (err) {
         createFile()
     } else {
-        console.log('file exists')
+        console.log('file exsdfsdfists')
     }
     console.log('stats', stats)
 })
