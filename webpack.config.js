@@ -45,7 +45,7 @@ module.exports = (_, env) => {
             extensions: ['.js', '.jsx'],
         },
         devServer: {
-            contentBase: 'src/pwa',
+            contentBase: './src/pwa/',
             historyApiFallback: true,
             port: 5000,
         },
