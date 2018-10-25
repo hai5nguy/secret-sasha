@@ -3,6 +3,8 @@ import classNames from 'classnames'
 import { withStyles, DialogTitle, Dialog, Typography } from '@material-ui/core'
 import blue from '@material-ui/core/colors/blue'
 
+import SashaIcon from './SashaIcon'
+
 const styles = {
     sasha_icon: {
         width: '3rem',
@@ -28,7 +30,7 @@ class AboutModel extends React.Component {
         return (
             <Dialog onClose={this.handleClose} aria-labelledby="simple-dialog-title" {...other}>
                 <DialogTitle id="simple-dialog-title" align="center">Secret Sasha</DialogTitle>
-                <img className={c.sasha_icon} src="sasha_icon.png" />
+                <SashaIcon />
                 <div className={classNames(c.dialogBody)}>
                     <Typography component="p" align="center">
                         Made by Hai Nagooyen

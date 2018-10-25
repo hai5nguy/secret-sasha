@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = (_, env) => {
+    const isProd = env.mode === 'production'
+    console.log('isProd', isProd)
     const config = {
         mode: 'development',
         entry: './src/index',
@@ -31,7 +33,7 @@ module.exports = (_, env) => {
             }),
             new webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
-                'process.env.API_URL': JSON.stringify(process.env.API_URL || 'http://localhost:9001/graphql'),
+                'process.env.API_URL': JSON.stringify(isProd ? '/graphql' : 'http://localhost:5001/graphql'),
             }),
         ],
         resolve: {
@@ -52,8 +54,7 @@ module.exports = (_, env) => {
         devtool: 'eval-source-map',
     };
 
-    if (env.mode === 'production') {
-        console.log('prooddd')
+    if (isProd) {
         config.plugins.push(
             new CopyWebpackPlugin([
                 { from: 'src/pwa/' },

@@ -1,14 +1,33 @@
 // const validator = require("email-validator");
 //
-// const DB = require('./db.js')
+const db = require('./db')
 // const { compare, hash } = require('./password-utils.js')
 
 // const { authenticate, getGoogleAuthUrl } = require('./google-auth.js')
 
 module.exports = {
     hello: () => 'Hello world!',
-    gifters: () => {
+    gifters: async () => {
+        const gifters = await db.getGifters()
+        gifters.map(({ name, open }) => ({ name, open }))
+        return gifters
+    },
+    openGifter: async ({ name }) => {
+        const gifters = await db.getGifters()
+        let secretSanta;
+        gifters.forEach((g) => {
+            if (g.name === name && !g.open) {
+                g.open = true
+                secretSanta = g.secretSanta
+            }
+        });
+        console.log('secretSanta', secretSanta)
+        if (!secretSanta) {
+            throw new Error('CARD_ALREADY_OPENED')
+        }
 
+        await db.setGifters(gifters)
+        return secretSanta
     },
     // authenticate,
     // getGoogleAuthUrl,

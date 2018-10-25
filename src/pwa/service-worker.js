@@ -2,7 +2,7 @@
 
 this.addEventListener('install', function(event) {
     event.waitUntil(
-      caches.open('jTemplate').then(function(cache) {
+      caches.open('secret-sasha').then(function(cache) {
         return cache.addAll([
           'index.html',
           'bundle.js'
@@ -22,7 +22,7 @@ this.addEventListener('install', function(event) {
   
 //   this.addEventListener('activate', function(e) {
 //     console.log('***********************************');
-//     console.log('jTemplate service worker activated');
+//     console.log('secret-sasha service worker activated');
 //   });
   
 

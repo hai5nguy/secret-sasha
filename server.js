@@ -1,7 +1,7 @@
 const express = require('express')
 const graphqlHTTP = require('express-graphql')
 
-require('./create-gifters')
+const db = require('./db')
 
 const app = express()
 
@@ -19,6 +19,9 @@ app.use('/graphql', graphqlHTTP({
 app.use(express.static(`${__dirname}/build`))
 app.use('*', express.static(`${__dirname}/build/index.html`))
 
-app.listen(PORT, () => {
-    console.log(`Server running on ${PORT}`)
-});
+db.init(() => {
+    console.log('DB ready')
+    app.listen(PORT, () => {
+        console.log(`Server running on ${PORT}`)
+    });
+})

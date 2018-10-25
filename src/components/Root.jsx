@@ -1,19 +1,16 @@
 import React from 'react'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
-// import classNames from 'classnames'
-import { withStyles, Button, Typography } from '@material-ui/core'
+import { withStyles, Typography } from '@material-ui/core'
 
-// import { Main, TopBar, ManageFields } from 'components'
-import { loadAppData, openCard } from 'actions'
+import init from 'actions/init'
 
 import GifterDialog from './GifterDialog'
-import NameButton from './NameButton'
+import GifterCard from './GifterCard'
 import TopBar from './TopBar'
 
 const styles = {
     root: {
-        // height: '100%',
         maxWidth: 375,
         margin: '0 auto',
         background: '#cef3de',
@@ -31,48 +28,31 @@ const styles = {
     },
 };
 
-const names = ['Mom', 'Dad', 'Shannon', 'Hai', 'Diem', 'Adam', 'Kieu', 'Paul', 'Thu', 'Derik', 'Michael']
-
 class Root extends React.Component {
-    state = {
-        selectedGifter: '',
-    }
-
-    nameClick = name => (e) => {
-        console.log('nameClick', name)
-        this.setState({
-            selectedGifter: name,
-        })
-        // openCard(name)
-    }
-
-    onClose = () => {
-        this.setState({
-            selectedGifter: '',
-        })
+    constructor() {
+        super()
+        init()
     }
 
     render() {
-        const { classes: c } = this.props
-        const { selectedGifter } = this.state
+        const { classes: c, gifters } = this.props
         return (
             <div className={c.root}>
                 <TopBar />
                 <Typography className={c.select_your_card} variant="h5" align="center">Select your card:</Typography>
                 <div className={c.buttonContainer}>
-                    { names.map((n, i) => <NameButton key={i} name={n} nameClick={this.nameClick} />) }
+                    { gifters.map((g, i) => <GifterCard key={i} gifter={g} />) }
                 </div>
-                <GifterDialog open={selectedGifter !== ''} selectedGifter={selectedGifter} onClose={this.onClose} />
+                <GifterDialog />
             </div>
 
         )
     }
 }
 
-const mapStateToProps = (state) => {
-    const { activeView } = state.ui
-    return { activeView }
-}
+const mapStateToProps = state => ({
+    gifters: state.gifters,
+})
 
 export default compose(
     connect(mapStateToProps),

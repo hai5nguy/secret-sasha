@@ -1,1 +1,1 @@
-{"name":"yo name","open":false}
+[{"name":"Mom","open":true,"secretSanta":"Hai"},{"name":"Dad","open":true,"secretSanta":"The Rat"},{"name":"Shannon","open":true,"secretSanta":"Adam"},{"name":"Hai","open":true,"secretSanta":"Diem"},{"name":"Diem","open":false,"secretSanta":"Shannon"},{"name":"Adam","open":true,"secretSanta":"Thu"},{"name":"Kieu","open":false,"secretSanta":"Mom"},{"name":"Paul","open":true,"secretSanta":"Dad"},{"name":"Thu","open":true,"secretSanta":"Kieu"},{"name":"Derik","open":true,"secretSanta":"Paul"},{"name":"The Rat","open":true,"secretSanta":"Derik"}]

@@ -13,7 +13,9 @@ import TOCIcon from '@material-ui/icons/Toc'
 import HelpIcon from '@material-ui/icons/Help'
 import AboutModal from './AboutModal'
 
-import { setActiveView } from 'actions'
+import SashaIcon from './SashaIcon'
+
+// import { setActiveView } from 'actions'
 
 const styles = {
     root: {
@@ -65,7 +67,7 @@ class TopBar extends React.Component {
                             aria-label="Menu"
                             onClick={this.toggleDrawer(true)}
                         >
-                            <img className={c.sasha_icon} src="sasha_icon.png" />
+                            <SashaIcon />
                         </IconButton>
 
                         <SwipeableDrawer

@@ -1,12 +1,10 @@
 import { combineReducers, createStore } from 'redux'
 
-import card from './card-reducer'
-import template from './template-reducer'
+import gifters from './gifters-reducer'
 import ui from './ui-reducer'
 
 const reducer = combineReducers({
-    card,
-    template,
+    gifters,
     ui,
 })
 const store = createStore(

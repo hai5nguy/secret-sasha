@@ -8,7 +8,7 @@ module.exports = buildSchema(`
         openGifter (name: String): String
     }
     type Gifter {
-        name: String,
+        name: String
         open: Boolean
     }
 `);

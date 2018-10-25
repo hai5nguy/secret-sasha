@@ -1,8 +1,14 @@
 import React from 'react'
-// import { compose } from 'redux'
-// import { connect } from 'react-redux'
+import { compose } from 'redux'
+import { connect } from 'react-redux'
 import { withStyles, Button, Typography, Dialog, DialogContent } from '@material-ui/core'
 import { Warning } from '@material-ui/icons'
+
+import ConfirmContent from './ConfirmContent'
+import SecretContent from './SecretContent'
+import openCard from 'actions/open-card'
+// import setUi from 'actions/set-ui'
+import closeDialog from 'actions/close-dialog'
 
 const styles = {
     root: {
@@ -40,22 +46,38 @@ const styles = {
 };
 
 class GifterDialog extends React.Component {
+    close = () => {
+        closeDialog()
+    }
+
     render() {
-        const { classes: c, open, onClose, selectedGifter } = this.props
+        console.count('gifterdialog render')
+        const { classes: c, showDialog, secretSanta, secretSantaAlreadyViewed } = this.props
+
+        if (!showDialog) return null;
+
+        let content
+        if (secretSantaAlreadyViewed) {
+            content = <div>already viewed</div>
+        } else if (secretSanta) {
+            content = <SecretContent />
+        } else {
+            content = <ConfirmContent />
+        }
         return (
-            <Dialog classes={{ paper: c.paper }} open={open} onClose={onClose}>
-                <DialogContent className={c.dialog_content}>
-                    <Warning className={c.warning_icon} color="primary" />
-                    <Typography className={c.are_you_really} variant="h6" color="primary">Are you really {selectedGifter}?</Typography>
-                    <Typography className={c.once_revealed} variant="h6" color="primary" align="center">Once revealed, no one can view this card again!</Typography>
-                    <div className={c.buttonContainer}>
-                        <Button className={c.button} variant="contained" color="primary" onClick={onClose}>No</Button>
-                        <Button className={c.button} variant="contained" color="secondary">Yes, I am {selectedGifter}</Button>
-                    </div>
-                </DialogContent>
+            <Dialog classes={{ paper: c.paper }} open onClose={this.close}>
+                {content}
             </Dialog>
         )
     }
 }
 
-export default withStyles(styles)(GifterDialog)
+const mapStateToProps = (state) => {
+    const { showDialog, secretSanta, secretSantaAlreadyViewed, selectedGifter } = state.ui
+    return { showDialog, secretSanta, secretSantaAlreadyViewed, selectedGifter }
+}
+
+export default compose(
+    connect(mapStateToProps),
+    withStyles(styles),
+)(GifterDialog)

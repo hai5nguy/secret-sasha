@@ -1,8 +1,8 @@
 {
-    "name": "jTemplate",
-    "short_name": "jTemplate",
+    "name": "Secret Sasha",
+    "short_name": "Secret Sasha",
     "background_color": "#ffffff",
-    "description": "jTemplate App",
+    "description": "Secret Sasha App",
     "display": "standalone",
     "icons": [{
             "src": "icon-72x72.png",
