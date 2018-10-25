@@ -11,13 +11,13 @@ this.addEventListener('install', function(event) {
     );
   });
   
-  this.addEventListener('fetch', function(event) {
-    event.respondWith(
-      caches.match(event.request).then(function(response) {
-        return response || fetch(event.request);
-      })
-    );
-  });
+  // this.addEventListener('fetch', function(event) {
+  //   event.respondWith(
+  //     caches.match(event.request).then(function(response) {
+  //       return response || fetch(event.request);
+  //     })
+  //   );
+  // });
   
   
 //   this.addEventListener('activate', function(e) {
@@ -29,9 +29,9 @@ this.addEventListener('install', function(event) {
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js')
         .then(function (registration) {
-            console.log('jTemplate SW registration successful, scope is:', registration.scope);
+            console.log('SW registration successful, scope is:', registration.scope);
         })
         .catch(function (error) {
-            console.error('jTemplate SW registration failed, error:', error);
+            console.error('SW registration failed, error:', error);
         });
 }

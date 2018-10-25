@@ -1,47 +1,16 @@
 import React from 'react'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
-import { withStyles, Button, Typography, Dialog, DialogContent } from '@material-ui/core'
-import { Warning } from '@material-ui/icons'
+import { withStyles, Dialog } from '@material-ui/core'
 
+import AlreadyViewed from './AlreadyViewed'
 import ConfirmContent from './ConfirmContent'
 import SecretContent from './SecretContent'
-import openCard from 'actions/open-card'
-// import setUi from 'actions/set-ui'
 import closeDialog from 'actions/close-dialog'
 
 const styles = {
-    root: {
-    },
     paper: {
         margin: 0,
-    },
-    dialog_content: {
-        padding: 10,
-        maxWidth: 350,
-        textAlign: 'center',
-    },
-    header: {
-        display: 'flex',
-    },
-    warning_icon: {
-        fontSize: '36px',
-    },
-    are_you_really: {
-        fontWeight: 700,
-    },
-    once_revealed: {
-        color: '#544646',
-        marginTop: 12,
-    },
-    buttonContainer: {
-        display: 'flex',
-        justifyContent: 'space-around',
-        marginTop: 20,
-    },
-    button: {
-        width: '48%',
-        minHeight: 70,
     },
 };
 
@@ -51,14 +20,13 @@ class GifterDialog extends React.Component {
     }
 
     render() {
-        console.count('gifterdialog render')
         const { classes: c, showDialog, secretSanta, secretSantaAlreadyViewed } = this.props
 
         if (!showDialog) return null;
 
         let content
         if (secretSantaAlreadyViewed) {
-            content = <div>already viewed</div>
+            content = <AlreadyViewed />
         } else if (secretSanta) {
             content = <SecretContent />
         } else {
