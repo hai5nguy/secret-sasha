@@ -16,6 +16,11 @@ app.use('/graphql', graphqlHTTP({
     graphiql: true,
 }))
 
+app.use('/reset', (req, res) => {
+    db.reset()
+    res.send('Resetted')
+})
+
 app.use(express.static(`${__dirname}/build`))
 app.use('*', express.static(`${__dirname}/build/index.html`))
 

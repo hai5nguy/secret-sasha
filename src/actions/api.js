@@ -23,15 +23,4 @@ export const send = async (query) => {
     } catch (error) {
         return { error, data: null }
     }
-
-
-    // if (response.status !== 200) {
-    //     throw new Error(`sendQuery() status: ${response.status}`);
-    // }
-
-    // const json = await response.json();
-    // if (json.errors) {
-    //     throw new Error(json)
-    // }
-    // return json.data;
 };
