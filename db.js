@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-const GIFTERS_JSON = './gifters.json'
+const GIFTERS_JSON = './data/gifters.json'
 const GIFTER_NAMES = ['Mom', 'Dad', 'Shannon', 'Hai', 'Diem', 'Adam', 'Kieu', 'Paul', 'Thu', 'Derik', 'The Rat']
 
 const init = (callback) => {
