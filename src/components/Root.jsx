@@ -11,10 +11,11 @@ import TopBar from './TopBar'
 
 const styles = {
     root: {
-        maxWidth: 375,
+        maxWidth: 415,
         margin: '0 auto',
         background: '#cef3de',
         paddingBottom: 20,
+        width: '100%',
     },
     select_your_card: {
         color: 'green',
