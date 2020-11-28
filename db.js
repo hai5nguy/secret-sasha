@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 const GIFTERS_JSON = './data/gifters.json'
-const GIFTER_NAMES = ['Mom', 'Dad', 'Shannon', 'Hai', 'Diem', 'Adam', 'Kieu', 'Paul', 'Thu', 'Derik', 'The Rat']
+const GIFTER_NAMES = ['Mom', 'Dad', 'Hai', 'Diem', 'Adam', 'Kieu', 'Paul', 'Thu', 'Derik', 'Michael']
 
 const init = (callback) => {
     fs.stat(GIFTERS_JSON, (err) => {
